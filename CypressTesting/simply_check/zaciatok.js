@@ -17,9 +17,9 @@ it('vytvorenie tasku', () => {
     .get('[data-id="newTaskTitle"]')
     .type('Buy Milk{enter}')
 
-    cy
-      .get('.Task')
-      .should('be.visible')
+  cy
+    .get('.Task')
+    .should('be.visible')
 
 })
 
@@ -31,15 +31,18 @@ it('overenie poctu taskov', () => {
 
   cy
     .get('[data-id="newTaskTitle"]')
-    .type('Buy Cookies{enter}')
+    .type('Buy Cookie{enter}')
 
   cy
     .get('.Task')
     .should('have.length', 2)
 
+
+
+
 })
 
-it.only('overenie zaskrtnutia', () => {
+it('overenie zaskrtnutia', () => {
 
   cy
     .get('.Task input')
@@ -55,10 +58,10 @@ it.only('overenie zaskrtnutia', () => {
 
 })
 
-it('overenie názvu listu', () => {
+it.only('overenie názvu listu', () => {
 
   cy
     .get('.boardDetail_title')
-    .should('have.value, to do')
+    .should('have.value', 'to do')
 
 })
